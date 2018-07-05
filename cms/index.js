@@ -9,34 +9,4 @@
 		image: '/remote/direct_uploads/1530501017_ab.jpg',
 		$image_type: 'image'
 	},
-	performers: [
-		{
-			name: 'Shinjoo Cho',
-			instrument: 'Bandoneon',
-			bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-			$bio_type: 'textarea',
-			link: 'https://www.endurojs.com/docs/templates'
-		},
-		{
-			name: 'Joe Kaufman',
-			instrument: 'Violin',
-			bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-			$bio_type: 'textarea',
-			link: 'https://www.endurojs.com/docs/templates'
-		},
-		{
-			name: 'Ben Blazer',
-			instrument: 'Bass',
-			bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-			$bio_type: 'textarea',
-			link: 'https://www.endurojs.com/docs/templates'
-		},
-		{
-			name: 'Chris Coyle',
-			instrument: 'Bass',
-			bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-			$bio_type: 'textarea',
-			link: 'https://www.endurojs.com/docs/templates'
-		}
-	],
 })
