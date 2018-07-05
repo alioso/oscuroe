@@ -166,7 +166,7 @@
                 <defs>
                   <mask id="works-mask" x="0" y="0" width="600" height="338" >
                     <rect x="0" y="0" width="600" height="338" fill="#fff" />
-                      <polygon points="300 304,394 304,394 154,454 140,454 30,300 30"></polygon>
+                      <polygon points="300 304,394 304,394 240,454 240,454 30,300 30"></polygon>
                   </mask>
                 </defs>
                 <!-- rect should be bigger than 337.5, vector shape should be smaller than 337.5 -->
@@ -211,25 +211,28 @@
           {{/each}} --}}
 
           {{#performer}}
-            {{#each this}}
-              <div class="large-4 medium-6 columns">
-                <div class="item">
-                  <a href="/performer/{{page_slug}}">
-                    <div class="circle-wrap">
-                      <div class="media work-13"></div>
-                    </div>
-                    <div class="client-name">
-                      <h2>Member</h2>
-                      <h3>{{performer_entry.name}}</h3>
-                    </div>
-                    <div class="project">
-                      <h2>Instrument</h2>
-                      <h3>{{performer_entry.instrument}}</h3>
-                    </div>
-                  </a>
+          
+            {{!-- {{#sort_this_by this }} --}}
+              {{#each this}}
+                <div class="large-4 medium-6 columns">
+                  <div class="item">
+                    <a href="/performer/{{page_slug}}">
+                      <div class="circle-wrap">
+                        <div class="media work-13"></div>
+                      </div>
+                      <div class="client-name">
+                        <h2>Member</h2>
+                        <h3>{{performer_entry.name}}</h3>
+                      </div>
+                      <div class="project">
+                        <h2>Instrument</h2>
+                        <h3>{{performer_entry.instrument}}</h3>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            {{/each}}
+              {{/each}}
+            {{!-- {{/sort_this_by}}  --}}
           {{/performer}}
 
         </div>

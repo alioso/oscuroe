@@ -1,7 +1,8 @@
 define([],function() { return function(enduro.templating_engine) { 
 
-var _ = require('lodash')
-var Promise = require('bluebird')
+var _ = require('lodash');
+var Promise = require('bluebird');
+var arraySort = require('array-sort');
 
 enduro.templating_engine.registerHelper('performer', function (options) {
   
@@ -32,9 +33,10 @@ enduro.templating_engine.registerHelper('performer', function (options) {
     return Promise.all(get_content_promises)
   })
   .then(() => {
-    
+    console.log();
     // pass blog entries as context for the template
-    return options.fn(performer_entries)
+    const sorted = 'performer_entry.instrument';
+    return options.fn(arraySort(performer_entries, sorted));
   })
 })
 // * ———————————————————————————————————————————————————————— * //

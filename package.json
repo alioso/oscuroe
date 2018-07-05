@@ -9,6 +9,7 @@
 	"author": "author goes here",
 	"license": "MIT",
 	"dependencies": {
+		"array-sort": "^1.0.0",
 		"bluebird": "^3.5.1",
 		"enduro": "*",
 		"lodash": "^4.17.10"
