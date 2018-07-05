@@ -15,9 +15,9 @@ enduro.templating_engine.registerHelper('performer', function (options) {
     
     // will store the promises from reading all the blog entries
     var get_content_promises = []
-    
+
     performer_entries = _.chain(pagelist.structured.performer)
-    .filter((o) => { return typeof o === 'object' }).value() // filter pages only
+    .filter((o) => { return typeof o === 'object' && o.hidden !== true }).value() // filter pages only
     
     // goes through all the blog entries and loads their content
     for (page_id in performer_entries) {
@@ -33,9 +33,8 @@ enduro.templating_engine.registerHelper('performer', function (options) {
     return Promise.all(get_content_promises)
   })
   .then(() => {
-    console.log();
     // pass blog entries as context for the template
-    const sorted = 'performer_entry.instrument';
+    const sorted = 'performer_entry.weight';
     return options.fn(arraySort(performer_entries, sorted));
   })
 })

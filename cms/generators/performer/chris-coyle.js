@@ -1,9 +1,10 @@
 ({
-	name: 'Chris Coyle',
-	picture: '',
-	$picture_type: 'image',
-	instrument: 'Bass',
-	bio: '',
-	$bio_type: '',
-	link: ''
+  name: 'Chris Coyle',
+  picture: '',
+  $picture_type: 'image',
+  instrument: 'Bass',
+  bio: '',
+  $bio_type: '',
+  link: '',
+  weight: '5',
 })

@@ -1,5 +1,33 @@
 @import 'variables/*';
 
-.works {
-  border-bottom: 0;
+.performers {
+  overflow: hidden;
+
+  .columns {
+    padding: 0;
+
+    .item {
+      border: 0;
+
+      .performers__wrapper {
+        position: absolute;
+        left: 38%;
+        top: 82%;
+        right: 0;
+        width: 100%;
+      }
+
+      .performers__name {
+        font-size: 24px;
+      }
+
+      &::before {
+        content: none,
+      }
+    }
+
+    &:last-child:not(:first-child) {
+      float: left;
+    }
+  }
 }
