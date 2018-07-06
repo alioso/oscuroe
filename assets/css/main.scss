@@ -38,3 +38,20 @@
     }
   }
 }
+
+.back-to-nav {
+  color: #000;
+  font-size: 14px;
+  font-family: montserrat;
+  font-weight: bold;
+  top: 40px;
+  position: absolute;
+  right: 35px;
+  list-style-type: none;
+  z-index: 2;
+
+  li {
+    display: inline;
+    padding: 5px;
+  }
+}

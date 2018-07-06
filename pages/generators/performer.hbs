@@ -1,91 +1,92 @@
 {{>head}}
 
-<a href="index.html" class="back-to-all">Back to all cases</a>
-    <div class="case-header">
-      <div class="media-wrapper">
-        <div class="case-header-image" style="background-image: url({{picture}})"></div>
-        <div class="image-overlay"></div>
+  {{>backtonav}}
+  
+  <div class="case-header">
+    <div class="media-wrapper">
+      <div class="case-header-image" style="background-image: url({{picture}})"></div>
+      <div class="image-overlay"></div>
+    </div>
+      <div class="case-title">
+        <div class="row">
+            <div class="large-12 columns">
+              <h2>{{name}}</h2>
+            </div>
+        </div>
       </div>
-        <div class="case-title">
-          <div class="row">
-              <div class="large-12 columns">
-                <h2>{{name}}</h2>
-              </div>
-          </div>
-        </div>
 
-      <p class="action-hint">
-        <span class="scroll-down">
-          Scroll down for project info.
-          <i class="icon-arrows-slim-down"></i>
-        </span>
-      </p>
-    </div>
-    <div class="case-study-content">
-        <div class="full">
-            <div class="large-6 columns">
-              <div class="row">
-                <div class="large-5 columns">
-                  <div class="spacing"></div>
-                  <h3 class="meta-title">client</h3>
-                  <p class="meta-data">Twitter</p>
-                </div>
-                <div class="large-7 columns">
-                  <div class="spacing"></div>
-                  <h3 class="meta-title">Main roles</h3>
-                  <p class="meta-data">Creative design, rebuild brand</p>
-                </div>
+    <p class="action-hint">
+      <span class="scroll-down">
+        Scroll down for project info.
+        <i class="icon-arrows-slim-down"></i>
+      </span>
+    </p>
+  </div>
+  <div class="case-study-content">
+      <div class="full">
+          <div class="large-6 columns">
+            <div class="row">
+              <div class="large-5 columns">
+                <div class="spacing"></div>
+                <h3 class="meta-title">client</h3>
+                <p class="meta-data">Twitter</p>
               </div>
-              <div class="spacing"></div>
-              <div class="row">
-                <div class="large-5 columns">
-                  <h3 class="meta-title">Category</h3>
-                  <p class="meta-data">Brand, market</p>
-                </div>
-                <div class="large-7 columns">
-                  <h3 class="meta-title">Project timeline</h3>
-                  <p class="meta-data">8 weeks</p>
-                </div>
+              <div class="large-7 columns">
+                <div class="spacing"></div>
+                <h3 class="meta-title">Main roles</h3>
+                <p class="meta-data">Creative design, rebuild brand</p>
               </div>
-              <div class="four spacing"></div>
             </div>
-            <div class="large-6 columns">
-              <h2 class="colored-title">The brife</h2>
-              <p class="big-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A officiis iste eligendi possimus delectus architecto corrupti, rerum enim nam vero, minima! Dolor repellendus velit accusantium accusamus architecto repellat neque, obcaecati? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti aut ducimus optio culpa repellat perspiciatis fuga. Atque ut corporis quidem consequatur vero nobis dolorum! Nemo provident aspernatur quasi voluptate.
-              </p>
-              <div class="spacing"></div>
-              <p>
-                <a href="#" class="boxed button black launch">Launch project <i class="icon-arrows-slim-right"></i> </a>
-              </p>
+            <div class="spacing"></div>
+            <div class="row">
+              <div class="large-5 columns">
+                <h3 class="meta-title">Category</h3>
+                <p class="meta-data">Brand, market</p>
+              </div>
+              <div class="large-7 columns">
+                <h3 class="meta-title">Project timeline</h3>
+                <p class="meta-data">8 weeks</p>
+              </div>
             </div>
-        </div>
-       
-        <div class="case-nav">
-          {{#performer}}
-            {{#each this}}
-              {{#ifCond ../../weight '!=' performer_entry.weight }}
-                <div class="large-{{get_length ../this}} columns">
-                  <div class="item small-nav previous">
-                    <a href="/performer/{{page_slug}}">
-                      <div class="circle-wrap">
-                        <div class="media work-1" style="background-image: url({{performer_entry.picture}})"></div>
-                      </div>
-                      <span class="nav-title">
-                        <span class="sub-title" style="font-size: 12px;">
-                            {{performer_entry.instrument}}
-                        </span>
-                        <span class="title">
-                            {{performer_entry.name}}
-                        </span>
+            <div class="four spacing"></div>
+          </div>
+          <div class="large-6 columns">
+            <h2 class="colored-title">The brife</h2>
+            <p class="big-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A officiis iste eligendi possimus delectus architecto corrupti, rerum enim nam vero, minima! Dolor repellendus velit accusantium accusamus architecto repellat neque, obcaecati? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti aut ducimus optio culpa repellat perspiciatis fuga. Atque ut corporis quidem consequatur vero nobis dolorum! Nemo provident aspernatur quasi voluptate.
+            </p>
+            <div class="spacing"></div>
+            <p>
+              <a href="#" class="boxed button black launch">Launch project <i class="icon-arrows-slim-right"></i> </a>
+            </p>
+          </div>
+      </div>
+      
+      <div class="case-nav">
+        {{#performer}}
+          {{#each this}}
+            {{#ifCond ../../weight '!=' performer_entry.weight }}
+              <div class="large-{{get_length ../this}} columns">
+                <div class="item small-nav previous">
+                  <a href="/performer/{{page_slug}}">
+                    <div class="circle-wrap">
+                      <div class="media work-1" style="background-image: url({{performer_entry.picture}})"></div>
+                    </div>
+                    <span class="nav-title">
+                      <span class="sub-title" style="font-size: 12px;">
+                          {{performer_entry.instrument}}
                       </span>
-                    </a>
-                  </div>
+                      <span class="title">
+                          {{performer_entry.name}}
+                      </span>
+                    </span>
+                  </a>
                 </div>
-              {{/ifCond}}
-            {{/each}}
-          {{/performer}}
-        </div>
-    </div>
+              </div>
+            {{/ifCond}}
+          {{/each}}
+        {{/performer}}
+      </div>
+  </div>
 
 {{>foot}}
