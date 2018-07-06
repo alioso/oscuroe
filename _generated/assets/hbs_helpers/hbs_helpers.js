@@ -1,5 +1,47 @@
 define([],function() { return function(enduro.templating_engine) { 
 
+enduro.templating_engine.registerHelper('ifCond', function (v1, operator, v2, options) {
+  
+  switch (operator) {
+    case '==':
+    return (v1 == v2) ? options.fn(this) : options.inverse(this);
+    
+    case '===':
+    return (v1 === v2) ? options.fn(this) : options.inverse(this);
+    
+    case '!=':
+    return (v1 != v2) ? options.fn(this) : options.inverse(this);
+    
+    case '!==':
+    return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+    
+    case '<':
+    return (v1 < v2) ? options.fn(this) : options.inverse(this);
+    
+    case '<=':
+    return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+    
+    case '>':
+    return (v1 > v2) ? options.fn(this) : options.inverse(this);
+    
+    case '>=':
+    return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+    
+    case '&&':
+    return (v1 && v2) ? options.fn(this) : options.inverse(this);
+    
+    case '||':
+    return (v1 || v2) ? options.fn(this) : options.inverse(this);
+    
+    default:
+    return options.inverse(this);
+  }
+});
+
+enduro.templating_engine.registerHelper('get_length', function (obj) {
+  const initialLength = obj.length - 1;
+  return 12 / initialLength;
+});   
 var _ = require('lodash');
 var Promise = require('bluebird');
 var arraySort = require('array-sort');

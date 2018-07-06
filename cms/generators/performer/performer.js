@@ -6,5 +6,6 @@
 	instrument: '',
 	bio: '',
 	$bio_type: '',
-	link: ''
+	link: '',
+	weight: ''
 })
