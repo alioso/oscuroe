@@ -218,230 +218,45 @@
       </div>
       <div class="content invisible">
         <div class="spacing"></div>
-        <div class="posts">
-          <div class="large-6 columns">
-            <div class="post featured">
-              <div class="post-desc">
-                <p class="info-author">
-                  <span>
-                    Posted by
-                    <a href="#">admin</a>
-                  </span>
-                </p>
-                <h2><a href="single.html">You don’t take a photograph, you make it.</a></h2>
-                <p class="info-others">
-                  <span>15/11/2017</span>
-                  <span>
-                    In <a href="#" rel="category tag">Design</a>
-                  </span>
-                  <span>
-                    <a href="#">0 Comments</a>
-                  </span>
-                </p>
-                <div class="two spacing"></div>
-                <!-- <p><a href="#" class="button boxed black">Read more</a></p> -->
+        
+        <div class="events">
+
+          {{#event}}
+
+            {{#each this}}
+              <div class="large-12 columns">
+                <div class="event post">
+                  <a href="/event/{{page_slug}}">
+                    <div class="post-desc">
+                      <p class="info-author date">
+                        <span>{{event_entry.date}}</span>
+                      </p>
+                      <h2>{{event_entry.title}}</h2>
+                      <p class="info-others">
+                        <span>{{event_entry.time}}</span>
+                        <span>{{event_entry.venue}}</span>
+                      </p>
+                    </div>
+
+                    <div class="post-image-wrap">
+                      <div class="post-image post-image-3" style="background-image: url({{event_entry.picture}})"></div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              <div class="post-image-wrap">
-                <div class="post-image post-image-1"></div>
-              </div>
-            </div>
-          </div>
-          <div class="large-6 columns">
-            <div class="post">
-              <div class="post-desc">
-                <p class="info-author">
-                  <span>
-                    Posted by
-                    <a href="#">admin</a>
-                  </span>
-                </p>
-                <h2><a href="single.html">Cool video post.</a></h2>
-                <p class="info-others">
-                  <span>15/11/2017</span>
-                  <span>
-                    In <a href="#" rel="category tag">Design</a>
-                  </span>
-                  <span>
-                    <a href="#">0 Comments</a>
-                  </span>
-                </p>
-                <div class="two spacing"></div>
+            {{else}}
+              <div class="large-12 columns">
+                <div class="event post">
+                    <div class="post-desc">
+                      <h2>No Upcoming Event</h2>
+                    </div>
+                </div>
               </div>
 
-              <div class="post-image-wrap">
-                <div class="post-image post-image-3"></div>
-              </div>
-            </div>
-          </div>
-          <div class="large-6 columns">
-            <div class="post">
-              <div class="post-desc">
-                <p class="info-author">
-                  <span>
-                    Posted by
-                    <a href="#">admin</a>
-                  </span>
-                </p>
-                <h2><a href="single.html">Updating our ideneity.</a></h2>
-                <p class="info-others">
-                  <span>15/11/2017</span>
-                  <span>
-                    In <a href="#" rel="category tag">Design</a>
-                  </span>
-                  <span>
-                    <a href="#">0 Comments</a>
-                  </span>
-                </p>
-                <div class="two spacing"></div>
-              </div>
+            {{/each}}
+          {{/event}}
 
-              <div class="post-image-wrap">
-                <div class="post-image post-image-5"></div>
-              </div>
-            </div>
-          </div>
-          <div class="large-6 columns">
-            <div class="post">
-              <div class="post-desc">
-                <p class="info-author">
-                  <span>
-                    Posted by
-                    <a href="#">admin</a>
-                  </span>
-                </p>
-                <h2><a href="single.html">Selecting ideas for an innovative publishing business.</a></h2>
-                <p class="info-others">
-                  <span>15/11/2017</span>
-                  <span>
-                    In <a href="#" rel="category tag">Design</a>
-                  </span>
-                  <span>
-                    <a href="#">0 Comments</a>
-                  </span>
-                </p>
-                <div class="two spacing"></div>
-              </div>
-
-              <div class="post-image-wrap">
-                <div class="post-image post-image-7"></div>
-              </div>
-            </div>
-          </div>
-          <div class="large-6 columns">
-            <div class="post">
-              <div class="post-desc">
-                <p class="info-author">
-                  <span>
-                    Posted by
-                    <a href="#">admin</a>
-                  </span>
-                </p>
-                <h2><a href="single.html">The real winners.</a></h2>
-                <p class="info-others">
-                  <span>15/11/2017</span>
-                  <span>
-                    In <a href="#" rel="category tag">Design</a>
-                  </span>
-                  <span>
-                    <a href="#">0 Comments</a>
-                  </span>
-                </p>
-                <div class="two spacing"></div>
-              </div>
-
-              <div class="post-image-wrap">
-                <div class="post-image post-image-2"></div>
-              </div>
-            </div>
-          </div>
-          <div class="large-6 columns">
-            <div class="post">
-              <div class="post-desc">
-                <p class="info-author">
-                  <span>
-                    Posted by
-                    <a href="#">admin</a>
-                  </span>
-                </p>
-                <h2><a href="single.html">Art is pattern informed by sensibility.</a></h2>
-                <p class="info-others">
-                  <span>15/11/2017</span>
-                  <span>
-                    In <a href="#" rel="category tag">Design</a>
-                  </span>
-                  <span>
-                    <a href="#">0 Comments</a>
-                  </span>
-                </p>
-                <div class="two spacing"></div>
-              </div>
-
-              <div class="post-image-wrap">
-                <div class="post-image post-image-4"></div>
-              </div>
-            </div>
-          </div>
-          <div class="large-6 columns">
-            <div class="post">
-              <div class="post-desc">
-                <p class="info-author">
-                  <span>
-                    Posted by
-                    <a href="#">admin</a>
-                  </span>
-                </p>
-                <h2><a href="single.html">Art is pattern informed by sensibility.</a></h2>
-                <p class="info-others">
-                  <span>15/11/2017</span>
-                  <span>
-                    In <a href="#" rel="category tag">Design</a>
-                  </span>
-                  <span>
-                    <a href="#">0 Comments</a>
-                  </span>
-                </p>
-                <div class="two spacing"></div>
-              </div>
-
-              <div class="post-image-wrap">
-                <div class="post-image post-image-6"></div>
-              </div>
-            </div>
-          </div>
-          <div class="large-6 columns">
-            <div class="post">
-              <div class="post-desc">
-                <p class="info-author">
-                  <span>
-                    Posted by
-                    <a href="#">admin</a>
-                  </span>
-                </p>
-                <h2><a href="single.html">Art is pattern informed by sensibility.</a></h2>
-                <p class="info-others">
-                  <span>15/11/2017</span>
-                  <span>
-                    In <a href="#" rel="category tag">Design</a>
-                  </span>
-                  <span>
-                    <a href="#">0 Comments</a>
-                  </span>
-                </p>
-                <div class="two spacing"></div>
-              </div>
-
-              <div class="post-image-wrap">
-                <div class="post-image post-image-8"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="large-12 columns">
-          <div class="four spacing"></div>
-          <div class="four spacing"></div>
-          <a href="" class="load-more">Load More</a>
-          <div class="four spacing"></div>
         </div>
       </div>
     </div>

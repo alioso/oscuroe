@@ -38,6 +38,39 @@ enduro.templating_engine.registerHelper('ifCond', function (v1, operator, v2, op
   }
 });
 
+var _ = require('lodash');
+var Promise = require('bluebird');
+var arraySort = require('array-sort');
+
+enduro.templating_engine.registerHelper('event', function (options) {
+  
+  var event_entries
+  
+  return enduro.api.pagelist_generator.get_cms_list()
+  .then((pagelist) => {
+    
+    var get_content_promises = []
+
+    event_entries = _.chain(pagelist.structured.event)
+    .filter((o) => { return typeof o === 'object' && o.hidden !== true }).value() // filter pages only
+    
+    for (page_id in event_entries) {
+      var page = event_entries[page_id]
+      
+      function get_content (page) {
+        get_content_promises.push(enduro.api.flat.load(page.fullpath).then((content) => { page.event_entry = content }))
+      }
+      
+      get_content(page)
+    }
+    
+    return Promise.all(get_content_promises)
+  })
+  .then(() => {
+    const sorted = 'event_entry.$date_value';
+    return options.fn(arraySort(event_entries, sorted));
+  })
+})
 enduro.templating_engine.registerHelper('get_length', function (obj) {
   const initialLength = obj.length - 1;
   return 12 / initialLength;
@@ -48,20 +81,16 @@ var arraySort = require('array-sort');
 
 enduro.templating_engine.registerHelper('performer', function (options) {
   
-  // will store all the blog entries
   var performer_entries
   
-  // get_cms_list will return a structured list of all pages in a project
   return enduro.api.pagelist_generator.get_cms_list()
   .then((pagelist) => {
     
-    // will store the promises from reading all the blog entries
     var get_content_promises = []
 
     performer_entries = _.chain(pagelist.structured.performer)
     .filter((o) => { return typeof o === 'object' && o.hidden !== true }).value() // filter pages only
     
-    // goes through all the blog entries and loads their content
     for (page_id in performer_entries) {
       var page = performer_entries[page_id]
       
@@ -75,7 +104,6 @@ enduro.templating_engine.registerHelper('performer', function (options) {
     return Promise.all(get_content_promises)
   })
   .then(() => {
-    // pass blog entries as context for the template
     const sorted = 'performer_entry.weight';
     return options.fn(arraySort(performer_entries, sorted));
   })

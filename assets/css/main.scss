@@ -39,6 +39,30 @@
   }
 }
 
+
+.events {
+  border: 0;
+  overflow: auto;
+}
+
+.event {
+
+  &.post {
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .date {
+      font-size: 18px;
+    }
+
+    .info-others span {
+      font-size: 14px;
+    }
+  }
+}
+
 .back-to-nav {
   color: #000;
   font-size: 14px;
