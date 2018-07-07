@@ -217,34 +217,35 @@
         </div>
       </div>
       <div class="content invisible">
-        <div class="spacing"></div>
-        
         <div class="events">
 
           {{#event}}
-
             {{#each this}}
-              <div class="large-12 columns">
-                <div class="event post">
-                  <a href="/event/{{page_slug}}">
-                    <div class="post-desc">
-                      <p class="info-author date">
-                        <span>{{event_entry.date}}</span>
-                      </p>
-                      <h2>{{event_entry.title}}</h2>
-                      <p class="info-others">
-                        <span>{{event_entry.time}}</span>
-                        <span>{{event_entry.venue}}</span>
-                      </p>
-                    </div>
+              {{var "formattedEvent" (formatDate event_entry.date)}}
+              {{#in_future formattedEvent}}
+                <div class="large-12 columns">
+                  <div class="event post">
+                    <div class="event__wrapper">
+                      <a href="/event/{{page_slug}}">
+                        <div class="post-desc">
+                          <p class="info-author date">
+                            <span>{{event_entry.date}}</span>
+                          </p>
+                          <h2>{{event_entry.title}}</h2>
+                          <p class="info-others">
+                            <span>{{event_entry.time}}</span>
+                            <span>{{event_entry.venue}}</span>
+                          </p>
+                        </div>
 
-                    <div class="post-image-wrap">
-                      <div class="post-image post-image-3" style="background-image: url({{event_entry.picture}})"></div>
+                        <div class="post-image-wrap">
+                          <div class="post-image post-image-3" style="background-image: url({{event_entry.picture}})"></div>
+                        </div>
+                      </a>
                     </div>
-                  </a>
+                  </div>
                 </div>
-              </div>
-
+              {{/in_future}}
             {{else}}
               <div class="large-12 columns">
                 <div class="event post">
@@ -253,7 +254,37 @@
                     </div>
                 </div>
               </div>
+            {{/each}}
+          {{/event}}
 
+          {{#event}}
+            <h3 class="event__past-title">Past events</h3>
+            {{#each this}}
+            {{var "formattedEvent" (formatDate event_entry.date)}}
+              {{#has_passed formattedEvent}}
+                <div class="large-4 columns columns__past">
+                  <div class="event post">
+                    <div class="event__wrapper">
+                      <a href="/event/{{page_slug}}">
+                        <div class="post-desc">
+                          <p class="info-author date">
+                            <span>{{event_entry.date}}</span>
+                          </p>
+                          <h2>{{event_entry.title}}</h2>
+                          <p class="info-others">
+                            <span>{{event_entry.time}}</span>
+                            <span>{{event_entry.venue}}</span>
+                          </p>
+                        </div>
+
+                        <div class="post-image-wrap">
+                          <div class="post-image post-image-3" style="background-image: url({{event_entry.picture}})"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              {{/has_passed}}
             {{/each}}
           {{/event}}
 

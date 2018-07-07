@@ -41,6 +41,8 @@ enduro.templating_engine.registerHelper('ifCond', function (v1, operator, v2, op
 var _ = require('lodash');
 var Promise = require('bluebird');
 var arraySort = require('array-sort');
+var dateFormat = require('dateformat');
+var moment = require('moment');
 
 enduro.templating_engine.registerHelper('event', function (options) {
   
@@ -71,6 +73,32 @@ enduro.templating_engine.registerHelper('event', function (options) {
     return options.fn(arraySort(event_entries, sorted));
   })
 })
+
+enduro.templating_engine.registerHelper('now', function () {
+  const today = new Date();
+  return dateFormat(today, 'yyyy-mm-dd');
+})
+
+enduro.templating_engine.registerHelper('formatDate', function (date) {
+  return dateFormat(date, 'yyyy-mm-dd');
+})
+
+enduro.templating_engine.registerHelper('var', function(name, value, context){
+  this[name] = value;
+})
+
+enduro.templating_engine.registerHelper("in_future", function(dateString, options) {
+  if (moment(dateString).isAfter(moment())) {
+    return options.fn(this);
+  }
+})
+
+enduro.templating_engine.registerHelper("has_passed", function(dateString, options) {
+  if (moment(dateString).isBefore(moment())) {
+    return options.fn(this);
+  }
+})
+
 enduro.templating_engine.registerHelper('get_length', function (obj) {
   const initialLength = obj.length - 1;
   return 12 / initialLength;
