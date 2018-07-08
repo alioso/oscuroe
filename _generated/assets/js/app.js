@@ -233,7 +233,7 @@
   // bubble scroll event to window for jquery.appear
   $sections.scroll(function() { $(window).trigger('scroll'); });
 
-  $('#back').on('click', function(e) {
+  $('.back').on('click', function(e) {
     e.preventDefault();
 
     var delay = 500;

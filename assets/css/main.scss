@@ -40,6 +40,21 @@
 }
 
 
+#about {
+  
+  .header span {
+    top: 8%;
+    left: 5%;
+  }
+
+  &:hover {
+
+    .header span {
+      left: 5%;
+    }
+  }
+}
+
 .events {
   border: 0;
   overflow: auto;
@@ -92,24 +107,39 @@
   }
 }
 
+
+.box.active {
+  padding: 105px 20px 20px;
+}
+
 .logo {
   // z-index: 0;
 }
 
-.back-to-nav {
-  color: #000;
-  font-size: 14px;
-  font-family: montserrat;
-  font-weight: bold;
-  top: 40px;
-  position: absolute;
-  right: 35px;
-  list-style-type: none;
+.fixed-nav {
+  position: fixed;
+  background: #fff;
+  height: 80px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 5px 5px #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
 
-  li {
-    display: inline;
-    padding: 5px;
+  .back {
+    color: #000;
+    z-index: 999;
+    position: relative;
+    top: 0;
+    display: block !important;
+    right: 0;
+    font-size: 36px;
+    line-height: 36px;
+    padding: 20px;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
