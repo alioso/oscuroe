@@ -1,12 +1,5 @@
 @import 'variables/*';
 
-#back:hover {
-  transform: rotate(90deg);
-  transition-property: transform;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-}
-
 .performers {
   overflow: hidden;
 
@@ -43,14 +36,19 @@
 #about {
   
   .header span {
-    top: 8%;
-    left: 5%;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    color: white;
   }
 
   &:hover {
 
     .header span {
-      left: 5%;
+      left: 0;
     }
   }
 }
@@ -108,7 +106,7 @@
 }
 
 
-.box.active {
+.box.active, .case-header {
   padding: 105px 20px 20px;
 }
 
@@ -129,6 +127,21 @@
   justify-content: center;
   z-index: 2;
 
+  &__item {
+    display: inline;
+    text-transform: uppercase;
+    font-family: 'montserrat';
+    font-weight: 500;
+    color: #000;
+    margin: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s ease-in-out;
+
+    &:hover {
+      border-color: #ff5242;
+    }
+  }
+
   .back {
     color: #000;
     z-index: 999;
@@ -140,6 +153,13 @@
     line-height: 36px;
     padding: 20px;
     -webkit-tap-highlight-color: transparent;
+
+    &:hover i {
+      transform: rotate(90deg);
+      transition-property: transform;
+      transition-duration: 1s;
+      transition-timing-function: ease;
+    }
   }
 }
 

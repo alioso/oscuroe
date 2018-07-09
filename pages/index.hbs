@@ -6,20 +6,20 @@
         <nav>
           <h2>
             <a href="#" onclick="">
-              <video loop autoplay muted playsinline class="nav-video">
+              <video loop autoplay muted playsinline class="nav-video" style="width: 100%; height: 100%;">
                 <source src='assets/img/@stock/about-19.optimized..faststart.mp4' type='video/mp4'>
               </video>
               <svg width="600" height="338" viewBox="0 0 600 338" class="svg-graphic" id="svg-graphic-about">
                 <defs>
                   <mask id="about-mask" x="0" y="0" width="600" height="338" >
                     <rect x="0" y="0" width="600" height="338" fill="#fff" />
-                    <circle cx="300" cy="180" r="120" />
-                    <circle cx="300" cy="180" r="20" fill="white" />
+                    <circle cx="300" cy="100" r="50" />
+                    {{!-- <circle cx="300" cy="180" r="20" fill="white" /> --}}
                   </mask>
                 </defs>
                 <!-- rect should be bigger than 337.5, vector shape should be smaller than 337.5 -->
                 <!-- the 337.5 is calcutated by 600 / 16 * 9 -->
-                <rect x="0" y="0" width="600" height="338" />
+                {{!-- <rect x="0" y="0" width="600" height="338" /> --}}
               </svg>
               <span>Oscuro Quintet</span>
             </a>

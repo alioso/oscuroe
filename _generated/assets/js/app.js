@@ -133,7 +133,7 @@
         break;
     }
 
-    $('#back').removeClass('right-bottom left-bottom right-top left-top').addClass(backClass).removeClass('hide');
+    $('.back').removeClass('right-bottom left-bottom right-top left-top').addClass(backClass).removeClass('hide');
 
     $(this).one(transitionEvent, function() { callback(this) });
 
