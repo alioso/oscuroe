@@ -1,3 +1,3 @@
 define(["handlebars"], function(Handlebars) { return Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<nav class=\"fixed-nav\">\n  <a href=\"/\" class=\"fixed-nav__item\">Home</a>\n  <a href=\"/\" class=\"fixed-nav__item\" id=\"performerLink\">Perfomers</a>\n  <a href=\"/\" class=\"fixed-nav__item\" id=\"eventLink\">Events</a>\n</nav>";
+    return "<nav class=\"fixed-nav\">\n  <a href=\"/\" class=\"fixed-nav__item\">Home</a>\n  <a href=\"/#works\" class=\"fixed-nav__item\" id=\"performerLink\">Perfomers</a>\n  <a href=\"/\" class=\"fixed-nav__item\" id=\"eventLink\">Events</a>\n</nav>";
 },"useData":true}); });

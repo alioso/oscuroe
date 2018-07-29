@@ -229,6 +229,42 @@
 
   });
 
+  $(window).on('load', function() {
+    var hash = window.location.hash;
+
+      if (hash === '#about') {
+        $('#about.box').addClass('active');
+        $('#works.box').addClass('inactive-w-0');
+        $('#blog.box').addClass('inactive-h-0');
+        $('#contact.box').addClass('inactive-h-w-0 ');
+      }
+      else if (hash === '#works') {
+        $('#about.box').addClass('inactive-w-0');
+        $('#works.box').addClass('active');
+        $('#blog.box').addClass('inactive-h-w-0 ');
+        $('#contact.box').addClass('inactive-h-0');
+      }
+      else if (hash === '#blogs') {
+        $('#about.box').addClass('inactive-h-0');
+        $('#works.box').addClass('inactive-h-w-0');
+        $('#blog.box').addClass('active');
+        $('#contact.box').addClass('inactive-w-0');
+      }
+      else if (hash === '#contact') {
+        $('#about.box').addClass('inactive-h-w-0');
+        $('#works.box').addClass('inactive-h-0');
+        $('#blog.box').addClass('inactive-w-0');
+        $('#contact.box').addClass('active');
+      }
+      else {
+        return false;
+      }
+
+    sectionAnimation.apply($(hash), [ $(hash), load ]);
+
+    return false;
+  });
+
 
   // bubble scroll event to window for jquery.appear
   $sections.scroll(function() { $(window).trigger('scroll'); });
